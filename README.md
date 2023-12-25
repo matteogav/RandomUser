@@ -1,0 +1,6 @@
+El proyecto sigue el patrón de diseño MVVM (Model View ViewModel) y sigue los principios de Clean Architecture para mantener una estructura modular y desacoplada.
+En el "módulo" del dominio se encuentra la interfaz que define el repositorio UserRepository, el modelo de datos para los usuarios, y el usecase GetUsersUseCase.
+En el de data tenemos el modelo de datos del user que ofrece la api, la implementación del repositorio, los services que utilizan Retrofit para realizar la petición a la api, y el fichero de sources que contiene la implementación necesaria para utilizar la paginación en la obtención de los datos.
+Por último, tenemos la capa de presentación (ui), que contiene los activities, viewmodel, etc. Y también la carpeta "di", en la que se definen las dependencias necesarias entre las clases definidas anteriormente, para ello he utilizado Koin.
+Para la carga de imágenes he decidido utilizar la librería Coil, que es simple y eficaz.
+No he tenido grandes dificultades para el desarrollo de esta prueba, dado que por motivos externos he dispuesto de dos días para realizar la prueba, me ha faltado tiempo para desarrollar los tests, que hubiese realizado con JUnit y Mockito. Y como pequeño inconveniente encontrado, el diseño proporcionado definía la UI para dispositivos iOS, por lo que he intentado ajustar el diseño lo más cercano posible al de Figma.
