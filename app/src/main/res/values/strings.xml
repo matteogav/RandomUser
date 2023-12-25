@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RandomUser</string>
+
+    <!--Users Activity-->
+    <string name="users_activity_title">Contactos</string>
+    <string name="users_searchbar_hint">Buscar...</string>
+
+    <!--User Info Activity-->
+    <string name="userinfo_name_title">Nombre y apellidos</string>
+    <string name="userinfo_email_title">Email</string>
+    <string name="userinfo_genre_title">Género</string>
+    <string name="userinfo_registerdate_title">Fecha de registro</string>
+    <string name="userinfo_cell_title">Teléfono</string>
+    <string name="userinfo_direction_title">Dirección</string>
+
+    <string name="userinfo_male">Hombre</string>
+    <string name="userinfo_female">Mujer</string>
+</resources>

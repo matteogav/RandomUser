@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/userinfo_header_image"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/user_header" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_userinfo_appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:elevation="0dp"
+        android:outlineProvider="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/activity_users_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/userinfo_profile_frame_layout"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:background="@drawable/border_shape"
+        app:layout_constraintTop_toBottomOf="@id/userinfo_header_image"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-39dp" >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="39dp"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="false" >
+
+            <ImageView
+                android:id="@+id/userinfo_profile_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/userinfo_header_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/userinfo_camera_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="center"
+            android:background="@color/transparent" />
+        <ImageButton
+            android:id="@+id/userinfo_edit_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="center"
+            android:background="@color/transparent" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/userinfo_profile_frame_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+            <include
+                android:id="@+id/userinfo_name_item"
+                layout="@layout/item_user_info" />
+            <include
+                android:id="@+id/userinfo_email_item"
+                layout="@layout/item_user_info" />
+            <include
+                android:id="@+id/userinfo_gender_item"
+                layout="@layout/item_user_info" />
+            <include
+                android:id="@+id/userinfo_registration_date_item"
+                layout="@layout/item_user_info" />
+            <include
+                android:id="@+id/userinfo_phone_item"
+                layout="@layout/item_user_info" />
+
+            <TextView
+                android:id="@+id/userinfo_direction_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="11sp"
+                android:textColor="@color/grey3" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/userinfo_map_view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
